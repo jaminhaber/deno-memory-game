@@ -1,0 +1,35 @@
+/** @jsx h */
+import { h } from "preact";
+import { tw } from "@twind";
+
+const sizes: [number, number][] = [
+  [4, 4],
+  [4, 5],
+  [5, 6],
+  [6, 6],
+  [6, 7],
+  [7, 8],
+];
+
+export default function Home() {
+  return (
+    <div class={tw`p-4 mx-auto max-w-screen-md`}>
+      <h2 className={tw`text-2xl text-center mb-4 font-bold`}>Memory Game</h2>
+      <div>
+        {sizes.map(([w, h]) => {
+          const path = `${w}x${h}`;
+          return (
+            <div key={path} className={tw`mb-2`}>
+              <a
+                className={tw`p-4 bg-red-300 hover:bg-red-500 block text-center	text-xl`}
+                href={path}
+              >
+                {path}
+              </a>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
