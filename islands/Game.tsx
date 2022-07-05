@@ -58,7 +58,8 @@ const Card = ({ flipped, solved, emoji, onClick }: CardProps) => {
     if (flipped) return "bg-blue-500";
     return "bg-red-400";
   })();
-  const className = tw`flex justify-center items-center hover:drop-shadow-md cursor-pointer ${bgColor}`;
+  const cursor = solved ? "" : "cursor-pointer";
+  const className = tw`flex justify-center items-center hover:drop-shadow-md ${cursor} ${bgColor}`;
 
   return (
     <div disabled={!IS_BROWSER} onClick={onClick} className={className}>
