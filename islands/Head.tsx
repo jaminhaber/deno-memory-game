@@ -1,12 +1,12 @@
 /** @jsx h */
 import { h } from "preact";
-import { Head } from "$fresh/runtime.ts";
+// import { Head } from "$fresh/runtime.ts";
 
 export default function Seo() {
   return (
-    <Head>
+    <head>
       <link rel="icon" href="/logo.png"></link>
       <title>Emoji Memory</title>
-    </Head>
+    </head>
   );
 }
